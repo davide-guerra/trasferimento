@@ -1,0 +1,21 @@
+---
+label: Recensione
+hide_body: true
+display_field: author
+fields:
+- type: text
+  name: author
+  label: Autore
+  description: L'autore della recensione.
+  config:
+    required: true
+- type: file
+  name: avatar
+  label: Avatar
+  description: Un'immagine dell'autore.
+- type: text
+  name: content
+  label: Contenuto
+  description: Il contenuto testuale della recensione.
+  config:
+    required: true

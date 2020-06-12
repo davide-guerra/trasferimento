@@ -1,0 +1,65 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: static/admin
+webhook_url: https://api.stackbit.com/project/5edcc5448f0c6f001350b65d/webhook/forestry
+sections:
+- type: document
+  path: content/_index.md
+  label: Home del sito
+  templates:
+  - page
+- type: document
+  path: content/blog/_index.md
+  label: Pagina blog
+  templates:
+  - blog
+- type: document
+  path: content/podcast/_index.md
+  label: Pagina podcast
+  templates:
+  - portfolio
+- type: directory
+  path: content
+  label: Altre pagine
+  create: all
+  match: "**/*"
+  exclude: "{_index.md, posts/**,blog/**,podcast/**}"
+  templates:
+  - page
+- type: directory
+  path: content/blog
+  label: Articoli del blog
+  create: all
+  match: "**/*"
+  exclude: "{_index.md}"
+  templates:
+  - post
+- type: directory
+  path: content/podcast
+  label: Episodi podcast
+  create: all
+  match: "**/*"
+  exclude: "{_index.md}"
+  templates:
+  - project
+- type: document
+  path: config.yaml
+  label: Impostazioni del sito
+  templates:
+  - config
+upload_dir: static/images
+public_path: "/images"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":filename:"
+build:
+  preview_env:
+  - HUGO_ENV=staging
+  - HUGO_VERSION=0.71.0
+  preview_output_directory: public
+  preview_docker_image: forestryio/hugo:latest
+  mount_path: "/srv"
+  instant_preview_command: hugo server -D -E -F --port 8080 --bind 0.0.0.0 --renderToDisk
+    -d public
+version: 0.71.0

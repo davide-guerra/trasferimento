@@ -1,0 +1,59 @@
+---
+label: Episodio
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo dell'episodio.
+  config:
+    required: true
+- type: text
+  name: subtitle
+  label: Sottotitolo
+  description: Il sottotitolo dell'episodio.
+- type: number
+  name: number
+  label: Numero dell'episodio
+  description: Inserisci qui il numero della puntata.
+  config:
+    required: true
+    min: 0
+    step: 1
+- type: text
+  name: excerpt
+  label: Riassunto
+  description: Un breve riassunto della pagina per i motori di ricerca.
+- type: text
+  name: audio
+  label: Audio link
+  description: Link al file MP3.
+- type: datetime
+  name: date
+  label: Data dell'episodio
+  config:
+    required: true
+    date_format: DD/MM/YYYY
+- type: file
+  name: thumb_image
+  label: Immagine in evidenza
+  description: L'immagine visualizzata nell'elenco degli episodi (pagina Podcast).
+- type: file
+  name: image
+  label: Immagine in evidenza alternativa
+  description: L'immagine visualizzata all'interno dell'episodio.
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: project
+  config:
+    required: true
+pages:
+- content/podcast/project-1.md
+- content/podcast/project-2.md
+- content/podcast/project-3.md
+- content/podcast/project-4.md
+- content/podcast/project-5.md
+- content/podcast/project-6.md
+- content/podcast/project-7.md

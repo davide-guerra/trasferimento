@@ -1,0 +1,54 @@
+---
+label: Sezione Articoli
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo della sezione.
+- type: text
+  name: section_id
+  label: ID
+  description: Un identificativo univoco per creare link alla sezione. Non può contenere
+    spazi bianchi.
+- type: text
+  name: subtitle
+  label: Sottotitolo
+  description: Il sottotitolo della sezione.
+- type: number
+  name: posts_number
+  label: Numero di articoli da visualizzare
+  default: 3
+  config:
+    required: true
+- type: select
+  name: col_number
+  label: Colonne
+  description: Il numero di articoli da visualizzare in ogni riga.
+  default: three
+  config:
+    required: true
+    source:
+      type: custom
+    options:
+    - two
+    - three
+- type: field_group_list
+  name: actions
+  label: Bottoni (Call for action)
+  fields:
+  - type: include
+    name: include_action
+    label: Azione
+    template: action
+  config:
+    labelField: label
+- type: text
+  name: type
+  label: Reference Type Name
+  description: Name of the Stackbit object model, used by fields of type reference
+  hidden: true
+  default: section_posts
+  config:
+    required: true

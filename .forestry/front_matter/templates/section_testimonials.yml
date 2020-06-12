@@ -1,0 +1,48 @@
+---
+label: Sezione Recensioni
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo della sezione.
+- type: text
+  name: section_id
+  label: ID
+  description: Un identificativo univoco per creare link alla sezione. Non può contenere
+    spazi bianchi.
+- type: text
+  name: subtitle
+  label: Sottotitolo
+  description: Il sottotitolo della sezione.
+- type: select
+  name: col_number
+  label: Colonne
+  description: Il numero di recensioni da visualizzare in ogni riga.
+  default: three
+  config:
+    required: true
+    source:
+      type: custom
+    options:
+    - two
+    - three
+- type: field_group_list
+  name: testimonials
+  label: Recensioni
+  fields:
+  - type: include
+    name: include_testimonial
+    label: Recensione
+    template: testimonial
+  config:
+    labelField: author
+- type: text
+  name: type
+  label: Reference Type Name
+  description: Name of the Stackbit object model, used by fields of type reference
+  hidden: true
+  default: section_testimonials
+  config:
+    required: true

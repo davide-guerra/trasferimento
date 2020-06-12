@@ -1,0 +1,36 @@
+---
+label: Azione
+hide_body: true
+display_field: label
+fields:
+- type: text
+  name: label
+  label: Etichetta
+  config:
+    required: true
+- type: text
+  name: url
+  label: URL
+  config:
+    required: true
+- type: select
+  name: type
+  label: Tipologia
+  default: link
+  config:
+    required: true
+    source:
+      type: custom
+    options:
+    - link
+    - button
+    - icon
+- type: text
+  name: icon_class
+  label: Icona
+  description: Inserisci la classe di Font Awesome. Da utilizzare solo se la tipologia
+    è "icon".
+- type: boolean
+  name: new_window
+  label: Apri in nuova tab/finestra
+  default: false

@@ -1,0 +1,139 @@
+---
+label: Impostazioni del sito
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo del sito.
+  config:
+    required: true
+- type: text
+  name: baseURL
+  label: URL base
+  description: Hostname (e percorso) per la radice.
+  hidden: true
+- type: field_group
+  name: params
+  label: Parametri
+  description: Parametri del sito.
+  config:
+    required: true
+  fields:
+  - type: text
+    name: description
+    label: Descrizione del sito
+    description: Una descrizione del sito per i motori di ricerca.
+  - type: select
+    name: color_scheme
+    label: Schema colori
+    description: Lo schema colori usato per il sito.
+    default: light
+    config:
+      source:
+        type: custom
+      options:
+      - light
+      - dark
+  - type: select
+    name: accent_color
+    label: Colore principlae
+    description: Il colore principale usato per il sito.
+    default: pink
+    config:
+      source:
+        type: custom
+      options:
+      - pink
+      - green
+      - blue
+      - violet
+      - yellow
+  - type: field_group
+    name: header
+    label: Impostazioni dell'header
+    fields:
+    - type: text
+      name: title
+      label: Titolo header
+      description: Il testo mostrato nell'header se non è stata aggiunto un logo in
+        formato immagine.
+    - type: file
+      name: logo_img
+      label: Logo
+      description: Il logo del sito.
+    - type: boolean
+      name: has_nav
+      label: Abilita il menù di navigazione
+      description: Mostra un elenco di link nell'header.
+      default: true
+    - type: field_group_list
+      name: nav_links
+      label: Link di navigazione
+      description: Una lista di link per navigare tra le pagine del sito.
+      fields:
+      - type: include
+        name: include_action
+        label: Azione
+        template: action
+      config:
+        labelField: label
+  - type: field_group
+    name: footer
+    label: Impostazioni del footer
+    fields:
+    - type: text
+      name: content
+      label: Contenuto del footer
+      description: Copyright, partita IVA, etc.
+    - type: field_group_list
+      name: links
+      label: Link
+      description: Una lista di link da inserire nel footer.
+      fields:
+      - type: include
+        name: include_action
+        label: Azione
+        template: action
+      config:
+        labelField: label
+    - type: boolean
+      name: has_social
+      label: Abilita i social network
+      description: Mostra dei link ai tuoi social network nel footer.
+      default: true
+    - type: field_group_list
+      name: social_links
+      label: Link ai social network
+      description: Una lista dei link ai social network da inserire nel footer.
+      fields:
+      - type: include
+        name: include_action
+        label: Azione
+        template: action
+      config:
+        labelField: label
+- type: list
+  name: disableKinds
+  label: Disable Kinds
+  description: Enable disabling of all pages of the specified Kinds.
+  hidden: true
+  config:
+    source:
+      type: custom
+    options:
+    - page
+    - home
+    - section
+    - taxonomy
+    - taxonomyTerm
+    - RSS
+    - sitemap
+    - robotsTXT
+    - '404'
+    use_select: true
+- type: boolean
+  name: uglyURLs
+  label: Ugly URLs
+  description: When enabled, creates URL of the form /filename.html instead of /filename/.
+  hidden: true

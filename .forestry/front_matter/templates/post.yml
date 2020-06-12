@@ -1,0 +1,50 @@
+---
+label: Articolo
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo dell'articolo.
+  config:
+    required: true
+- type: text
+  name: subtitle
+  label: Sottotitolo
+  description: Il sottotitolo dell'articolo.
+- type: datetime
+  name: date
+  label: Data
+  config:
+    required: true
+    date_format: DD/MM/YYYY
+- type: file
+  name: thumb_image
+  label: Immagine in evidenza
+  description: L'immagine visualizzata nell'elenco degli articoli (pagina Blog).
+- type: file
+  name: image
+  label: Immagine in evidenza alternativa
+  description: L'immagine visualizzata all'interno dell'articolo.
+- type: text
+  name: excerpt
+  label: Riassunto
+  description: Un breve riassunto della pagina per i motori di ricerca e per l'elenco
+    degli articoli (pagina Blog).
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: post
+  config:
+    required: true
+pages:
+- content/blog/function-of-design.md
+- content/blog/games.md
+- content/blog/green.md
+- content/blog/interior-designer.md
+- content/blog/street-photography.md
+- content/blog/un-nuovo-articolo.md
+- content/blog/why-fonts-matter.md
+- content/blog/working-from-home.md
+- content/blog/workplace.md

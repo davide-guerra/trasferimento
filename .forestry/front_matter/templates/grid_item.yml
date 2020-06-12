@@ -1,0 +1,31 @@
+---
+label: Elemento griglia
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo dell'elemento griglia.
+- type: file
+  name: image
+  label: Immagine
+  description: L'immagine dell'elemento griglia.
+- type: textarea
+  name: content
+  label: Contenuto
+  description: Il contenuto dell'elemento griglia.
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: field_group_list
+  name: actions
+  label: Bottoni (Call for action)
+  fields:
+  - type: include
+    name: include_action
+    label: Azione
+    template: action
+  config:
+    labelField: label

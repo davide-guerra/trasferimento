@@ -1,0 +1,60 @@
+{{ define "content" }}
+
+<div class="inner outer">
+
+  <article class="post post-full">
+    <header class="post-header inner-sm">
+      <h1 class="post-title line-top">{{ .Params.title }}</h1>
+      <!-- Il tag {{ .Params.audio }} inserisce in questa pagina un link per il caricamento MP3. Bisogna scrivere in questo template un po' di codice per renderizzare il player audio AmplitudeJS -->
+      {{ if .Params.subtitle }}
+      <div class="post-subtitle">
+        {{ .Params.subtitle | safeHTML }}
+      </div>
+      {{ end }}
+    </header>
+    {{ if .Params.audio }}
+    <div id="single-song-player">
+      <div class="top-container">
+        <img data-amplitude-song-info="cover_art_url" />
+      </div>
+      <div class="bottom-container">
+        <div class="all-elements">
+          <div class="meta-container">
+            <span data-amplitude-song-info="name" class="song-name"></span>
+            <span data-amplitude-song-info="album"></span>
+            <span data-amplitude-song-info="date"></span>
+          </div>
+          <div class="advancement-container">
+            <div class="progress-container">
+              <progress class="amplitude-song-played-progress" id="song-played-progress"></progress>
+            </div>
+            <div class="time-container">
+              <span class="current-time">
+                <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+              </span>
+              <span class="duration">
+                <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+              </span>
+            </div>
+          </div>
+          <div class="control-container">
+            <div class="amplitude-play-pause" id="play-pause"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="post-content inner-sm">
+      {{ .Content }}
+    </div>
+    <footer class="post-meta inner-sm">
+      <time class="published" datetime="{{ .Date | dateFormat "2006-01-02 15:04" }}">Pubblicato il {{ .Date.Day }}
+        {{ index $.Site.Data.mesi (printf "%d" .Date.Month) }} {{ .Date.Year }}</time>
+    </footer>
+  </article><!-- .post -->
+
+</div><!-- .inner -->
+
+{{ end }}

@@ -1,0 +1,43 @@
+---
+label: Campo del form
+hide_body: true
+display_field: name
+fields:
+- type: select
+  name: type
+  label: Tipologia
+  description: Tipologia di campo input.
+  config:
+    required: true
+    source:
+      type: custom
+    options:
+    - text
+    - email
+    - tel
+    - number
+    - checkbox
+    - textarea
+    - select
+- type: text
+  name: name
+  label: Nome
+  description: Nome del campo input, che verrà inviato insieme al form.
+  config:
+    required: true
+- type: text
+  name: label
+  label: Etichetta
+  description: L'etichetta mostrata al di sopra del campo input.
+- type: text
+  name: default_value
+  label: Valore di default
+  description: Il valore di default (valido solo per campi input testuali).
+- type: list
+  name: options
+  label: Opzioni
+  description: Una lista di opzioni (valida solo per campi input "select").
+- type: boolean
+  name: is_required
+  label: È un campo input obbligatorio?
+  default: false

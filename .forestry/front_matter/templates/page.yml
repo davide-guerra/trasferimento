@@ -1,0 +1,32 @@
+---
+label: Pagina
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo della pagina.
+  config:
+    required: true
+- type: text
+  name: subtitle
+  label: Sottotitolo
+  description: Il sottotitolo della pagina.
+- type: text
+  name: excerpt
+  label: Riassunto
+  description: Un breve riassunto della pagina per i motori di ricerca.
+- type: file
+  name: image
+  label: Imamagine
+  description: Un'immagine mostrata al di sotto del titolo e del sottotitolo.
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: page
+  config:
+    required: true
+pages:
+- content/privacy-policy.md
+- content/style-guide.md

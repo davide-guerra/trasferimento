@@ -1,0 +1,50 @@
+title: Tommaso Martino
+baseURL: /
+params:
+  description: Consulente editoriale e autore di testi divulgativi
+  color_scheme: light
+  accent_color: green
+  header:
+    title: Tommaso Martino
+    has_nav: true
+    nav_links:
+      - label: Chi sono
+        url: /chi-sono/
+        type: link
+      - label: Podcast
+        url: /podcast/
+        type: link
+      - label: Blog
+        url: /blog/
+        type: link
+      - label: Contatti
+        url: /contatti/
+        type: link
+  footer:
+    content: '&copy; Tommaso Martino. Tutti i diritti riservati.'
+    links:
+      - label: Privacy policy
+        url: '/privacy-policy/'
+        type: link
+        new_window: true
+    has_social: true
+    social_links:
+      - label: LinkedIn
+        url: 'https://www.linkedin.com/'
+        type: icon
+        icon_class: fa-linkedin
+        new_window: true
+      - label: Twitter
+        url: 'https://twitter.com/'
+        type: icon
+        icon_class: fa-twitter
+        new_window: true
+      - label: Instagram
+        url: 'https://www.instagram.com/'
+        type: icon
+        icon_class: fa-instagram
+        new_window: true
+disableKinds:
+  - RSS
+  - taxonomy
+  - taxonomyTerm

@@ -1,0 +1,60 @@
+---
+label: Sezione Form
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Titolo
+  description: Il titolo della sezione.
+- type: text
+  name: section_id
+  label: ID
+  description: Un identificativo univoco per creare link alla sezione. Non può contenere
+    spazi bianchi.
+- type: text
+  name: subtitle
+  label: Sottotitolo
+  description: Il sottotitolo della sezione.
+- type: textarea
+  name: content
+  label: Contenuto
+  description: Il contenuto testuale della sezione.
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: text
+  name: form_id
+  label: ID del form
+  description: Un identificativo univoco per il form. Non può contenere spazie bianchi.
+  config:
+    required: true
+- type: text
+  name: form_action
+  label: Azione del form
+  description: Il percorso della pagina "messaggio inviato". Utilizza questo campo
+    se vuoi sovrascrivere l'avviso di default.
+- type: field_group_list
+  name: form_fields
+  label: Campi input del form
+  fields:
+  - type: include
+    name: include_form_field
+    label: Campo input
+    template: form_field
+  config:
+    labelField: name
+- type: text
+  name: submit_label
+  label: Etichetta per il bottone di invio
+  config:
+    required: true
+- type: text
+  name: type
+  label: Reference Type Name
+  description: Name of the Stackbit object model, used by fields of type reference
+  hidden: true
+  default: section_form
+  config:
+    required: true
